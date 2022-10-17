@@ -1,7 +1,9 @@
-import React from 'react';
+import useShops from '../../hooks/useShops';
 
 export default function Shops() {
-  return (
-    <div>Shops</div>
-  );
+  const { shops } = useShops();
+ // eslint-disable-next-line no-console
+  console.log(shops);
+  //test to see is query is doing anything
+  return <div>Shops</div>;
 }

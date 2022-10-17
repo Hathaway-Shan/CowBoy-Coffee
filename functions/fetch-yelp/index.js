@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('cross-fetch');
 require('dotenv').config({ path: `.env.development.local` });
 
 exports.handler = async (event) => {
