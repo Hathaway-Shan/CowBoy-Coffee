@@ -1,0 +1,18 @@
+.card-container {
+  height: 500px;
+  min-width: 350px;
+  width: 40vw;
+  margin: auto;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border: solid 3px black;
+}
+
+.card-container img {
+  width: 200px;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}

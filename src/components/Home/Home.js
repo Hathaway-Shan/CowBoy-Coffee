@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
-import Shops from '../Shops/Shops';
+import ShopsView from '../ShopsView/ShopsView';
 
 export default function Home() {
   const { user } = useUser();
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <h1>Your Campfire</h1>
-      <Shops />
+      <ShopsView />
     </div>
   );
 }
