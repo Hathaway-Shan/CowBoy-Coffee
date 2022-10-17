@@ -3,6 +3,8 @@ import { Redirect, useParams } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { authUser } from '../../services/auth';
 
+import './Auth.css';
+
 export default function Auth() {
   const { user, setUser } = useUser();
   const { type } = useParams();
@@ -24,18 +26,14 @@ export default function Auth() {
   if (user) return <Redirect to={'/campfire'} />;
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmitAuth}>
-          <label> Email:
-            <input name='email'/>
-          </label>
-          <label> Password:
-            <input type='password' name='password'/>
-          </label>
-          <button>{typeName}</button>
-        </form>
-      </div>
+    <div className='auth-form-container'>
+      <form className='auth-form' onSubmit={handleSubmitAuth}>
+        <label htmlFor='email'> Email:</label>
+        <input name='email'/>
+        <label htmlFor='password'> Password:</label>
+        <input type='password' name='password'/>
+        <button>{typeName}</button>
+      </form>
     </div>
   );
 }

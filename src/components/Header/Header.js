@@ -2,6 +2,8 @@ import { useUser } from '../../context/UserContext';
 import { signOut } from '../../services/auth';
 import { NavLink } from 'react-router-dom';
 
+import './Header.css';
+
 export default function Header() {
   const { user, setUser } = useUser();
   //build a handle logout function
@@ -16,17 +18,25 @@ export default function Header() {
   };
   //if user is true return jsx
 
+  let username;
+  if (user) {
+    [username] = user.email.split('@');
+  }
+
   return (
-    <div className="header-wrapper">
+    <div>
       {!user && (
-        <div>
-          <NavLink className="sign-in" to="/auth/sign-in">Sign In</NavLink>
-          <NavLink className="sign-up" to="/auth/sign-up">Sign Up</NavLink>
+        <div className="header-wrapper">
+          <h2>Cowboy Coffee</h2>
+          <div>
+            <NavLink className="loginout" to="/auth/sign-in">Sign In</NavLink>
+            <NavLink className="loginout" to="/auth/sign-up">Sign Up</NavLink>
+          </div>
         </div>
       )}
       {user && (
-        <div className="header">
-          <div>Welcome {user.email}, to Cowboy Coffee</div>
+        <div className="header-wrapper">
+          <div>Welcome {username}, to Cowboy Coffee</div>
           <button className="logout-button" onClick={handleLogout}>Sign Out</button>
         </div>
       )}

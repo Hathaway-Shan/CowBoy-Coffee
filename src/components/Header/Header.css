@@ -1,0 +1,20 @@
+.header-wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: steelblue;
+}
+
+.header-wrapper button {
+  border-radius: 5px;
+}
+
+.loginout {
+  margin: 0 5px;
+}
+
+.active {
+  font-size: 1.5em;
+}
