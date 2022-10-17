@@ -1,0 +1,22 @@
+.auth-form-container {
+  min-width: 350px;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form button {
+  width: fit-content;
+  margin: 10px 0;
+}
+
+.auth-form label {
+  margin: 10px 0;
+}
