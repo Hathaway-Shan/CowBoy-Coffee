@@ -8,7 +8,7 @@ export default function useShops() {
     const fetchData = async () => {
       try {
         const data = await fetchShops();
-        console.log('data in hook: ', data);
+        setShops(data);
       } catch (e) {
         // eslint-disable-next-line no-console
         console.log(e.message);

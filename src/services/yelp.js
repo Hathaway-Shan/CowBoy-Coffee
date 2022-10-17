@@ -5,6 +5,5 @@ export async function fetchShops(zip = '80304') {
     headers: { Accept: 'application/json' },
   });
   const data = await response.json();
-  console.log('response is: ', response);
   return data;
 }
