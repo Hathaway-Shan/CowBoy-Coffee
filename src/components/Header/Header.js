@@ -20,14 +20,14 @@ export default function Header() {
     <div className="header-wrapper">
       {!user && (
         <div>
-          <NavLink className="sign-in" to="/auth/sign-in" Sign-in />
-          <NavLink className="sign-up" to="/auth/sign-up" Sign-up />
+          <NavLink className="sign-in" to="/auth/sign-in">Sign In</NavLink>
+          <NavLink className="sign-up" to="/auth/sign-up">Sign Up</NavLink>
         </div>
       )}
       {user && (
         <div className="header">
-          <div>hello {user.email}</div>
-          <button className="logout-button" onClick={handleLogout}></button>
+          <div>Welcome {user.email}, to Cowboy Coffee</div>
+          <button className="logout-button" onClick={handleLogout}>Sign Out</button>
         </div>
       )}
     </div>

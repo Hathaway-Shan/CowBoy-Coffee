@@ -6,7 +6,6 @@ import { authUser } from '../../services/auth';
 export default function Auth() {
   const { user, setUser } = useUser();
   const { type } = useParams();
-
   const typeName = type === 'sign-in' ? 'sign-in' : 'sign-up';  
 
   const handleSubmitAuth = async (e) => {
@@ -22,7 +21,7 @@ export default function Auth() {
     }
   }; 
 
-  if (user) return <Redirect to={'/'} />;
+  if (user) return <Redirect to={'/campfire'} />;
 
   return (
     <div>
