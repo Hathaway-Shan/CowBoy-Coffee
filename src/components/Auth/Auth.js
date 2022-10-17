@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { authUser } from '../../services/auth';
 
@@ -11,26 +11,30 @@ export default function Auth() {
 
   const handleSubmitAuth = async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
+    
     try {
       const currentUser = await authUser(formData.get('email'), formData.get('password'), type);
       setUser(currentUser);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
     }
   }; 
+
+  if (user) return <Redirect to={'/'} />;
+
   return (
     <div>
       <div>
-        <form>
+        <form onSubmit={handleSubmitAuth}>
           <label> Email:
             <input name='email'/>
           </label>
           <label> Password:
             <input type='password' name='password'/>
           </label>
-          <button onClick={handleSubmitAuth}>{typeName}</button>
+          <button>{typeName}</button>
         </form>
       </div>
     </div>
