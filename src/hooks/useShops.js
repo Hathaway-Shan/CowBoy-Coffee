@@ -3,6 +3,16 @@ import { fetchShops } from '../services/yelp';
 
 export default function useShops() {
   const [shops, setShops] = useState([]);
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+
+  async function getLocation() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+    });
+  }
+  getLocation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +25,6 @@ export default function useShops() {
       }
     };
     fetchData();
-  }, []);
+  }, [latitude, longitude]);
   return { shops, setShops };
 }

@@ -1,6 +1,7 @@
-export async function fetchShops(zip = '80304') {
+export async function fetchShops(latitude = '', longitude = '') {
   const params = new URLSearchParams();
-  params.set('zip', zip);
+  params.set('latitude', latitude);
+  params.set('longitude', longitude);
   const response = await fetch(`/.netlify/functions/fetch-yelp?${params.toString()}`, {
     headers: { Accept: 'application/json' },
   });
