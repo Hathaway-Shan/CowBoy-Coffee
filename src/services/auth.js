@@ -1,6 +1,5 @@
 import { client } from './client';
 
-
 export function getUser() {
   return client.auth.user();
 }
@@ -13,9 +12,8 @@ export async function authUser(email, password, type) {
     response = await client.auth.signIn({ email, password });
   }
   if (response.error) throw new Error(response.error.message);
-  
-  return response.user;
 
+  return response.user;
 }
 
 export async function signOut() {
