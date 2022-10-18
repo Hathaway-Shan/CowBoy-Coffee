@@ -1,0 +1,20 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-container {
+  display: flex;
+}
+
+.dev{
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-img {
+  height: 300px;
+  border-radius: 9rem;
+  
+
+}
