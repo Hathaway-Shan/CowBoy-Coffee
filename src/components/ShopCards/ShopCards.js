@@ -1,5 +1,4 @@
 import useShops from '../../hooks/useShops';
-import Loading from '../Loading/Loading';
 import './ShopCards.css';
 
 export default function ShopCards() {
