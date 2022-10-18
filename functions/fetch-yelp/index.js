@@ -7,7 +7,7 @@ exports.handler = async (event) => {
   
   try {
     const response = await fetch(
-      `https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=${latitude}&longitude=${longitude}&term=coffee`,
+      `https://api.yelp.com/v3/businesses/search?categories=coffee&latitude=${latitude}&longitude=${longitude}&term=coffee`,
       {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
