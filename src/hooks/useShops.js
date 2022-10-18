@@ -17,7 +17,7 @@ export default function useShops() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchShops();
+        const data = await fetchShops(latitude, longitude);
         setShops(data);
       } catch (e) {
         // eslint-disable-next-line no-console

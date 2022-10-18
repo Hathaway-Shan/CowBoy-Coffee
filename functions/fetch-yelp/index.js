@@ -2,9 +2,9 @@ const fetch = require('cross-fetch');
 require('dotenv').config({ path: `.env.development.local` });
 
 exports.handler = async (event) => {
-  const latitude = event.queryStringParameters.latitude;
-  const longitude = event.queryStringParameters.longitude;
-  console.log('latitude in net func', latitude);
+  const latitude = event.queryStringParameters.latitude.toString();
+  const longitude = event.queryStringParameters.longitude.toString();
+  
   try {
     const response = await fetch(
       `https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=${latitude}&longitude=${longitude}&term=coffee`,
