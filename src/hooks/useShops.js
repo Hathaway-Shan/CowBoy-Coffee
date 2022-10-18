@@ -5,10 +5,9 @@ export default function useShops() {
   const [shops, setShops] = useState([]);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   async function getLocation() {
-    setLoading(true);
     // eslint-disable-next-line space-before-function-paren
     navigator.geolocation.getCurrentPosition(function (position) {
       setLatitude(position.coords.latitude);
@@ -20,6 +19,7 @@ export default function useShops() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const data = await fetchShops(latitude, longitude);
         setShops(data);
         setLoading(false);
