@@ -7,19 +7,19 @@ export default function AboutUs() {
       <div className="dev-container">
         <div className="dev">
           <img className='dev-img' src={`${process.env.PUBLIC_URL}/cowboys/olivia.jpg`} />
-          <span className="dev-name">Olivia Pasion</span>
+          <h3 className="dev-name">Olivia Pasion</h3>
           <a className="site-link" href='https://github.com/Olivia-Pasion'>GitHub</a>
           <a className="site-link" href='https://www.linkedin.com/in/olivia-pasion/'>LinkedIn</a>
         </div>
         <div className="dev">
           <img className='dev-img' src={`${process.env.PUBLIC_URL}/cowboys/shan.png`} />
-          <span className="dev-name">Shan Hathaway</span>
+          <h3 className="dev-name">Shan Hathaway</h3>
           <a className="site-link" href='https://github.com/Hathaway-Shan'>GitHub</a>
           <a className="site-link" href='https://www.linkedin.com/in/shan-hathaway/'>LinkedIn</a>
         </div>
         <div className="dev">
           <img className='dev-img' src={`${process.env.PUBLIC_URL}/cowboys/dave.jpg`} />
-          <span className="dev-name">Dave Fisher</span>
+          <h3 className="dev-name">Dave Fisher</h3>
           <a className="site-link" href='https://github.com/davejfish'>GitHub</a>
           <a className="site-link" href='https://www.linkedin.com/in/davefisher88/'>LinkedIn</a>
         </div>

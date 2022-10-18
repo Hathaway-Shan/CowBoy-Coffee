@@ -4,17 +4,21 @@
 }
 
 .dev-container {
+  justify-content: center;
   display: flex;
+  justify-content: space-around;
 }
 
 .dev{
   display: flex;
   flex-direction: column;
+  background-color: lightslategrey;
+  padding: 20px;
 }
 
 .dev-img {
-  height: 300px;
+  height: 250px;
+  width: 250px;
   border-radius: 9rem;
-  
-
+  object-fit: cover;
 }
