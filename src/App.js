@@ -13,7 +13,7 @@ function App() {
         <Route path="/auth/:type" component={Auth} />
         <Route path="/profile/:id" component={Profile} />
         <Route path="/campfire" component={Home} />
-        <Route path="*" component={Home}>
+        <Route path="*">
           <Redirect to="/campfire" />
         </Route>
       </Switch>
