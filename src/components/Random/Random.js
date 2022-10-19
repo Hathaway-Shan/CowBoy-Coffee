@@ -1,30 +1,30 @@
-import useShopDetail from '../../hooks/useShopDetail';
 import useShops from '../../hooks/useShops';
+import './Random.css';
 
 export default function Random() {
   const { shops } = useShops();
-  const { shopDetail } = useShopDetail();
 
   const handleRandom = async () => {
-    //console.log(shops.length);
+  
+  // getRandomInt generates a random number between 0 and array.length
     function getRandomInt(min, max) {
       min = Math.ceil(0);
       max = Math.floor(shops.length);
       return Math.floor(Math.random() * (max - min) + min);
     }
-    let i = getRandomInt();
-    console.log(i);
-    console.log(shops[i]);
-    console.log(shops);
-    return shops[i]; 
-  };
-    
   
+  // sets getRandomInt as 'i' to generate a random index in the array 
+    let i = getRandomInt();
+    const randomShop = shops[i];
+  
+  // immediately redirects user to the random shop detail page
+    window.location = `/campfire/${randomShop.id}`;
+  };
 
   return (
     <div>
-      <button onClick={handleRandom}>Quick Draw</button>
       <span>get a random shop</span>
+      <button onClick={handleRandom}>Quick Draw</button>
     </div>
   );
 }
