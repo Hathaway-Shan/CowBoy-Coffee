@@ -22,9 +22,13 @@ export default function Random() {
   };
 
   return (
-    <div>
+    <div className = "random-container">
       <span>get a random shop</span>
-      <button onClick={handleRandom}>Quick Draw</button>
+      <button className="random-button" onClick={handleRandom}>
+        <p>
+          Quick Draw
+        </p>
+      </button>
     </div>
   );
 }

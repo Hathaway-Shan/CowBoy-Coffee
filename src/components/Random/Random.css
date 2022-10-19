@@ -1,0 +1,15 @@
+.random-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.random-button {
+  display: flex;
+  background: url(../../../public/assets/quickdraw-button/quickdraw.png) no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 200px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
