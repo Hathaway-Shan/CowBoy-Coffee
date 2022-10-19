@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import './AboutUs.css';
 
 export default function AboutUs() {
@@ -26,12 +25,5 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
-=======
-
-
-export default function AboutUs() {
-  return (
-    <div>AboutUs</div>
->>>>>>> ef2dec9b821c71b0c7d790ff39ce4cb8e8029b8c
   );
 }

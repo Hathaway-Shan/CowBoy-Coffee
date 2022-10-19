@@ -1,0 +1,50 @@
+ul {
+  list-style: none;
+}
+
+.shop-container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.shop-info {
+  margin: auto;
+  text-align: center;
+}
+
+.shop-info ul {
+  padding: 0px;
+}
+
+.image-container {
+  width: 300px;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.image-container ul {
+  list-style: none;
+  display: block;
+  white-space: nowrap;
+}
+
+.image-container li {
+  display: inline;
+  width: 100px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 300px;
+  padding: 10px;
+}
+
+.map {
+  padding: 10px;
+}
