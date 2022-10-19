@@ -1,5 +1,4 @@
-import { NavLink, Redirect } from 'react-router-dom';
-import useShops from '../../hooks/useShops';
+import { NavLink } from 'react-router-dom';
 import './ShopCards.css';
 
 export default function ShopCards({ shops }) {

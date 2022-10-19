@@ -2,25 +2,25 @@ import { useEffect, useState } from 'react';
 import { fetchShopDetail } from '../services/yelp';
 
 
-export default function useShopDetail(detailID) {
+export default function useShopDetail(id) {
   const [shopDetail, setShopDetail] = useState(null);
-  const [id, setID] = useState(null);
-
-  setID(detailID);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
-    const fetchData = async (id) => {
+    const fetchData = async () => {
       try {
         const data = await fetchShopDetail(id);
-        console.log('data inside hook: ', data);
         setShopDetail(data);
+        setLoading(false);
       } catch (e) {
-        // eslint-disable-next-line no-console
-        console.log(e);
+        setError(e);
+        setLoading(false);
       }
     };
-    fetchData(id);
+    fetchData();
   }, [id]);
   
-  return { shopDetail };
+  return { shopDetail, error, loading };
 }

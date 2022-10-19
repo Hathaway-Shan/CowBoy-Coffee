@@ -12,10 +12,6 @@ exports.handler = async (event) => {
   let id = event.queryStringParameters.id;
   id = id ? id.toString() : null;
 
-  console.log('latitude: ', latitude);
-  console.log('longitude: ', longitude);
-  console.log('id: ', id);
-
   try {
     let response;
     if (!id) {
@@ -27,7 +23,6 @@ exports.handler = async (event) => {
           },
         }
       );
-      console.log('response is: ', response.ok);
       const data = await response.json();
       return {
         statusCode: 200,
@@ -35,7 +30,6 @@ exports.handler = async (event) => {
       };
     }
     else {
-      console.log('inside id route');
       response = await fetch(
         `https://api.yelp.com/v3/businesses/${id}`,
         {
@@ -44,7 +38,6 @@ exports.handler = async (event) => {
           },
         }
       );
-      console.log('response is: ', response.ok);
       const data = await response.json();
       return {
         statusCode: 200,

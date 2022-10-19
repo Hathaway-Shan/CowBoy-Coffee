@@ -1,26 +1,26 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useShopDetail from '../../hooks/useShopDetail';
-import { fetchShopDetail } from '../../services/yelp';
+import Loading from '../Loading/Loading';
+import Map from '../Map/Map';
 
 export default function ShopDetail() {
   const { id } = useParams();
-  const [shopDetail, setShopDetail] = useState();
-  console.log('id: ', id);
+  const { shopDetail, loading, error } = useShopDetail(id);
 
-  const getDetail = async () => {
-    const data = await fetchShopDetail(id);
-    setShopDetail(data);
-  };
-  getDetail();
-  
+  if (error) {
+    return <h1>{error}</h1>;
+  }
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    <>
-      {console.log('shop detail is: ', shopDetail)}
-      <div>
-        <h1>what</h1>
-        <h2>{shopDetail.name}</h2>
-      </div>
-    </>
+    <div>
+      <Map />
+      <h1>what</h1>
+      <h2>{shopDetail.name}</h2>
+    </div>
+   
   );
 }
