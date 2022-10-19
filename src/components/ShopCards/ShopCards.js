@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './ShopCards.css';
 
 export default function ShopCards({ shops }) {
+  
 
   return (
     <div className="card-container">
