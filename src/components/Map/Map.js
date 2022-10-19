@@ -1,7 +1,7 @@
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import './Map.css';
 
-export default function Map() {
+export default function Map({ latitude, longitude }) {
 
   const containerStyle = {
     width: '400px',
@@ -9,8 +9,8 @@ export default function Map() {
   };
 
   const center = {
-    lat: 40.04738,
-    lng: -105.28121
+    lat: latitude,
+    lng: longitude
   };
 
   return (
@@ -21,7 +21,7 @@ export default function Map() {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={10}
+          zoom={16}
         >
           
         </GoogleMap>
