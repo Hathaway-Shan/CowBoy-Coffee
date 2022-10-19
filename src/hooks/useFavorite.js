@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getUserFavorites } from '../services/favorites';
-import useUser from '../context/UserContext';
+import { useUser } from '../context/UserContext';
 
-
-export default function useFavorite() {
+export default function useFavorites() {
   const { user } = useUser();
 
   const [favorites, setFavorites] = useState(false);
@@ -14,7 +13,7 @@ export default function useFavorite() {
     const fetchData = async () => {
       try {
         setLoadFave(true);
-        const data = await getUserFavorites(user);
+        const data = await getUserFavorites(user.id);
         setFavorites(data);
         setLoadFave(false);
       } catch (e) {
