@@ -11,10 +11,10 @@ import useShops from './hooks/useShops';
 import AboutUs from './components/AboutUs/AboutUs';
 
 function App() {
-  const { loading } = useShops();
+  // const { loading } = useShops();
   return (
     <div className="App">
-      <span>{loading ? <Loading /> : <></>}</span>
+      {/* <span>{loading ? <Loading /> : <></>}</span> */}
       <Header />
       <Switch>
         <Route path="/auth/:type" component={Auth} />

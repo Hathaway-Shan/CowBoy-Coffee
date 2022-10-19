@@ -9,7 +9,8 @@ export async function fetchShops(latitude = '', longitude = '') {
   return data;
 }
 
-export async function fetchShopDetail(id = '') {
+export async function fetchShopDetail(id) {
+  console.log('inside yelp fetch id: ', id);
   const params = new URLSearchParams();
   params.set('id', id);
   const response = await fetch(`/.netlify/functions/fetch-yelp?${params.toString()}`, {

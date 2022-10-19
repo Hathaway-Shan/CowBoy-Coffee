@@ -5,8 +5,7 @@ export default function useShops() {
   const [shops, setShops] = useState([]);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [favorite, setFavorite] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   async function getLocation() {
     // eslint-disable-next-line space-before-function-paren
