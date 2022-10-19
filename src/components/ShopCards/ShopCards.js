@@ -1,7 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 import './ShopCards.css';
 
 export default function ShopCards({ shops }) {
+
+  const { user } = useUser();
+
+  if (!user) {
+    return <Redirect to="/auth/sign-up"></Redirect>;
+  }
 
   return (
     <div className="card-container">

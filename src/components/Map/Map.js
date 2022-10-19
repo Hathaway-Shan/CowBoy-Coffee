@@ -21,7 +21,7 @@ export default function Map({ latitude, longitude }) {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={16}
+          zoom={18}
         >
           
         </GoogleMap>
