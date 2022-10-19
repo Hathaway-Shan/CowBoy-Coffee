@@ -42,7 +42,7 @@ export default function ShopDetail() {
             return <span key={address}>{address} </span>;
           })}
           <li>
-            <span>phone: {shopDetail.phone}</span>
+            <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>
           </li>
           <li>
             {shopDetail.hours[0].is_open_now ? <span>Open: Yes</span> : <span>Open: No</span>}

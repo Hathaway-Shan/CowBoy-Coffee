@@ -2,7 +2,11 @@ ul {
   list-style: none;
 }
 
-
+.shop-container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .shop-info {
   margin: auto;
