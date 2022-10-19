@@ -3,6 +3,7 @@ import { useUser } from '../../context/UserContext';
 import './ShopCards.css';
 
 export default function ShopCards({ shops }) {
+  
 
   const { user } = useUser();
 
