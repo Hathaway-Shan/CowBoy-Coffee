@@ -24,5 +24,5 @@ export default function useFavorites() {
     fetchData();
   }, [user]);
 
-  return { favorites, error, loadFave };
+  return { favorites, error, loadFave, setFavorites };
 }
