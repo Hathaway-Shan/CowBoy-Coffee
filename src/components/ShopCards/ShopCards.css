@@ -3,6 +3,8 @@
   min-width: 350px;
   width: 40vw;
   margin: auto;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

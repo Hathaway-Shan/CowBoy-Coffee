@@ -24,7 +24,7 @@ export default function Home() {
     <div>
       <h1>Your Campfire</h1>
       <Random />
-      <Favorites favorites={favorites} shops={shops} error={error} loadFave={loadFave} />
+      <Favorites favorites={favorites} setFavorites={setFavorites} shops={shops} error={error} loadFave={loadFave} />
       <ShopsView shops={shops} favorites={favorites} setFavorites={setFavorites} loading={loading} />
     </div>
   );
