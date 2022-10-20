@@ -66,7 +66,7 @@ export default function ShopDetail() {
         </ul>
       </div>
       <div className='map'>
-        <Map latitude={shopDetail.coordinates.latitude} longitude={shopDetail.coordinates.longitude}/>
+        <Map shopDetail={shopDetail} latitude={shopDetail.coordinates.latitude} longitude={shopDetail.coordinates.longitude}/>
       </div>
       <div className='yelp-link'>
         <span>
