@@ -1,6 +1,6 @@
-import { NavLink, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
-import { insertFavoriteShop } from '../../services/favorites';
+import { deleteFavoriteShop, insertFavoriteShop } from '../../services/favorites';
 import './ShopCards.css';
 
 export default function ShopCards({ shops, favorites, setFavorites }) {
@@ -10,21 +10,26 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
     return <Redirect to="/auth/sign-up"></Redirect>;
   }
 
-  // iterate though shops
-  // for each iteration, check all the user_id's inside of favorites
-  // return true when there is a match
-
   function handleFave(shop) {
-    if (favorites.find(favorite => {
-      favorite.yelp_id === shop.id;
-    }))
-      return true;
+    const found = favorites.find((favorite) => {
+      return favorite.yelp_id === shop.id;
+    });
+
+    if (found) return true;
     else return false;
   }
 
-  const handleCheck = async (yelp_id, user_id) => {
-    const newItem = await insertFavoriteShop(yelp_id, user_id);
-    setFavorites((prev) => [...prev, ...newItem]);
+  const handleCheck = async (yelp_id, user_id, shop) => {
+    if (handleFave(shop)) {
+      const removedItem = await deleteFavoriteShop(yelp_id, user_id);
+      setFavorites(prev => prev.filter(
+        (prevItem => (prevItem.id !== removedItem.id))
+      ));
+    }
+    else {
+      const newItem = await insertFavoriteShop(yelp_id, user_id);
+      setFavorites((prev) => [...prev, ...newItem]);
+    }
   };
 
   return (
@@ -32,7 +37,7 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
       {shops.map((shop) => (
         <div key={shop.id}>
           <h2>{shop.name}</h2>
-          <input type='checkbox' onChange={() => handleCheck(shop.id, user.id)} />
+          <input type='checkbox' checked={handleFave(shop)} onChange={() => handleCheck(shop.id, user.id, shop)} />
           <span>{shop.location.display_address}</span>
           <span>{shop.phone}</span>
           <img src={shop.image_url} />
