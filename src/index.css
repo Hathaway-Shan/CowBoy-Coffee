@@ -20,6 +20,10 @@ body {
 
 h1 {
   font-family: 'Rye', cursive;
+  padding: 30px;
+  font-size: 50px;
+  margin: 15px;
+  text-shadow: -5px 2px 8px white;
 }
 
 h2 {

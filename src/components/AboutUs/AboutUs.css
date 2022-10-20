@@ -1,19 +1,24 @@
 .about-us {
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  background-image: url("../../../public/assets/imgs/coffee-pots.jpg");
+  background-position: center;
+  background-size: cover;
+  
   
 }
 h1 {
   padding: 30px;
   font-size: 50px;
   margin: 15px;
+  text-shadow: -5px 2px 8px white;
 }
+
 .dev-container {
   justify-content: center;
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.504);
   
   padding: 50px;
   margin-left: 25px;
@@ -24,7 +29,6 @@ h1 {
 .dev {
   display: flex;
   flex-direction: column;
-  background-color: lightslategrey;
   padding: 20px;
   justify-content: center;
 }
