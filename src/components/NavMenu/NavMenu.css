@@ -34,7 +34,7 @@
   content: '';
   height: 0.5px;
   width: 0%;
-  background-color: whitesmoke;
+  background-color: black;
   display: block;
   transition: 0.5s ease-in-out;
 }
@@ -43,12 +43,12 @@
   content: '';
   height: 0.5px;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: black;
   display: block;
 }
 
 .menu-links:hover {
-  color: aqua;
+  color: black;
 }
 
 /* menu-links-open css */
@@ -61,7 +61,8 @@
 }
 
 .menu-links-open:hover {
-  color: aqua;
+  color: rgb(191, 188, 188);
+  font-style: italic;
 }
 
 /* link container for nav */
