@@ -54,7 +54,7 @@ export default function ShopDetail() {
           {shopDetail.phone ? <li>
             <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>
           </li> : <></>}
-          {shopDetail.hours[0].is_open_now ? <li>
+          {shopDetail.hours ? <li>
             {shopDetail.hours[0].is_open_now ? <span>Open: Yes</span> : <span>Open: No</span>}
           </li> : <></>}
           {shopDetail.price ? <li>
