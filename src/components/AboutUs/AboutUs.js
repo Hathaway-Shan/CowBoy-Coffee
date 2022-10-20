@@ -1,10 +1,10 @@
-<
+
 import './AboutUs.css';
 import { Redirect } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 
 export default function AboutUs() {
-const { user } = useUser();
+  const { user } = useUser();
   if (!user) {
     return <Redirect to="/auth/sign-in" />;
   }
