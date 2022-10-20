@@ -13,11 +13,25 @@
   margin-right: 25px;
 }
 
-.dev{
+.dev {
   display: flex;
   flex-direction: column;
   background-color: lightslategrey;
   padding: 20px;
+  justify-content: center;
+}
+
+.hat-container {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 40;
+}
+
+.hat {
+  height: 250px;
+  width: 250px;
+  object-fit: scale-down;
+  
 }
 
 .dev-img {
@@ -25,4 +39,6 @@
   width: 250px;
   border-radius: 9rem;
   object-fit: cover;
+  z-index: 30;
+  
 }
