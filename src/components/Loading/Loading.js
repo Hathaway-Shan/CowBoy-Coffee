@@ -4,7 +4,7 @@ import './Loading.css';
 export default function Loading() {
   return (
     <div className="body">
-      <div className="container">
+      <div className="loading-container">
         <div className="loadingText">
           <div className="loading_letter">L</div>
           <div className="loading_letter">o</div>
