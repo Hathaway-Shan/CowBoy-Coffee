@@ -38,6 +38,25 @@
   align-items: center;
 }
 
-.shop-card h2:hover {
-  border-bottom: solid 2px black;
+.shop-card h2 {
+  cursor: pointer;
+}
+
+/* shop card underline animation */
+
+.shop-card h2::after {
+  content: '';
+  height: 1.5px;
+  width: 0%;
+  background-color: black;
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+
+.shop-card h2:hover::after {
+  content: '';
+  height: 1.5px;
+  width: 100%;
+  background-color: black;
+  display: block;
 }
