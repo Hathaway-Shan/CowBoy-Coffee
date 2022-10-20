@@ -6,13 +6,14 @@ import { Favorites } from '../Favorites/Favorites';
 import Loading from '../Loading/Loading';
 import Random from '../Random/Random';
 import './Home.css';
-
 import ShopsView from '../ShopsView/ShopsView';
+import { useState } from 'react';
 
 export default function Home() {
   const { user } = useUser();
   const { error, favorites, setFavorites, loadFave } = useFavorites();
   const { loading, shops } = useShops();
+  const [isVisable, setIsVisable] = useState(false);
 
   if (!user) {
     return <Redirect to="/auth/sign-up"></Redirect>;
@@ -21,10 +22,17 @@ export default function Home() {
   if (loadFave) return <Loading />;
   if (error) return <h3>{error.message}</h3>;
 
+  const handleSetVisable = () => {
+    setIsVisable(prev => !prev);
+  };
+
   return (
     <div className="home-container">
       {loading ? <Loading /> : <></>}
-      <h1>Your Campfire</h1>
+      <div className='home-header'>
+        <button onClick={handleSetVisable}>favorites</button>
+        <h1>Your Campfire</h1>
+      </div>
       <Random />
       <Favorites
         favorites={favorites}
@@ -32,6 +40,7 @@ export default function Home() {
         shops={shops}
         error={error}
         loadFave={loadFave}
+        isVisable={isVisable}
       />
       <ShopsView
         shops={shops}
