@@ -1,16 +1,24 @@
 .about-us {
   display: flex;
   flex-direction: column;
+  background-color: gray;
+  
 }
-
+h1 {
+  padding: 30px;
+  font-size: 50px;
+  margin: 15px;
+}
 .dev-container {
   justify-content: center;
   display: flex;
   justify-content: space-around;
-  background-color: orange;
+  background-color: white;
+  
   padding: 50px;
   margin-left: 25px;
   margin-right: 25px;
+  object-fit: cover;
 }
 
 .dev {
@@ -23,7 +31,7 @@
 
 .hat-container {
   position: absolute;
-  top: 1.25rem;
+  top: 9.75rem;
   z-index: 40;
 }
 
@@ -31,6 +39,7 @@
   height: 250px;
   width: 250px;
   object-fit: scale-down;
+  pointer-events: none;
   
 }
 

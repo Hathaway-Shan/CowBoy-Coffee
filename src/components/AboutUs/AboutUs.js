@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <div className="about-us">
       <h1>Meet The Cowboy Coffee Posse</h1>
-      <div className="dev-container">
+      <div className="dev-container bg-cover bg-center">
         <div className="dev">
           <div className="hat-container">
             <img 
