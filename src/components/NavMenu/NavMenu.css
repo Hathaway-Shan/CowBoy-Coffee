@@ -28,9 +28,34 @@
   text-decoration: none;
 }
 
+/* underline animation for nav */
+
+a.menu-links {
+  text-decoration: none;
+}
+
+.menu-links::after {
+  content: '';
+  height: 0.5px;
+  width: 0%;
+  background-color: whitesmoke;
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+
+.menu-links:hover::after {
+  content: '';
+  height: 0.5px;
+  width: 100%;
+  background-color: whitesmoke;
+  display: block;
+}
+
 .menu-links:hover {
   color: aqua;
 }
+
+/* link container for nav */
 
 .menu-button-container {
   display: none;
@@ -45,6 +70,8 @@
 #menu-toggle {
   display: none;
 }
+
+/* hamburger menu button animation*/
 
 .menu-button,
 .menu-button::before,
@@ -81,6 +108,8 @@
   margin-top: 0px;
   transform: rotate(-405deg);
 }
+
+/* nav menu animation */
 
 @media (max-width: 700px) {
   .menu-button-container {
