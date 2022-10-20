@@ -51,18 +51,6 @@ export default function ShopDetail() {
               return <span key={address}>{address}</span>;
             return <span key={address}>{address} </span>;
           })}
-          {shopDetail.phone ? <li>
-            <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>
-          </li> : <></>}
-          {shopDetail.hours ? <li>
-            {shopDetail.hours[0].is_open_now ? <span>Open: Yes</span> : <span>Open: No</span>}
-          </li> : <></>}
-          {shopDetail.price ? <li>
-            <span>price: {shopDetail.price}</span>
-          </li> : <></>}
-          {shopDetail.rating ? <li>
-            <span>rating: {shopDetail.rating}</span>
-          </li> : <></>}
         </ul>
       </div>
       <div className='map'>

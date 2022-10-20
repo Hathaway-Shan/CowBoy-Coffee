@@ -18,8 +18,6 @@ export default function Map({ shopDetail, latitude, longitude }) {
     background: `white`,
     border: `1px solid #ccc`,
     padding: 15,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat'
   };
 
   
@@ -62,6 +60,20 @@ export default function Map({ shopDetail, latitude, longitude }) {
           >
             <div style={divStyle}>
               <h1>{shopDetail.name}</h1>
+              <ul>
+                {shopDetail.phone ? <li>
+                  <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>
+                </li> : <></>}
+                {shopDetail.hours ? <li>
+                  {shopDetail.hours[0].is_open_now ? <span>Open: Yes</span> : <span>Open: No</span>}
+                </li> : <></>}
+                {shopDetail.price ? <li>
+                  <span>price: {shopDetail.price}</span>
+                </li> : <></>}
+                {shopDetail.rating ? <li>
+                  <span>rating: {shopDetail.rating}</span>
+                </li> : <></>}
+              </ul>
             </div>
           </InfoWindow>
         </GoogleMap>
