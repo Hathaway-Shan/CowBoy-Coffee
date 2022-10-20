@@ -25,7 +25,7 @@ export default function ShopDetail() {
 
   return (
     <div className='shop-container'>
-      <div className='image-container'>
+      <div className='detail-image-container'>
         <ul>
           {shopDetail.photos.map((img, index) => (
             <li key={index}>
