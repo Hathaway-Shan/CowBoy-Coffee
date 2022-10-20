@@ -18,3 +18,4 @@ export async function fetchShopDetail(id) {
   const data = await response.json();
   return data;
 }
+
