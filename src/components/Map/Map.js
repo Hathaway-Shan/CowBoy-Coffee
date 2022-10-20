@@ -1,4 +1,4 @@
-import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, InfoWindow, LoadScript } from '@react-google-maps/api';
 import { useEffect, useState } from 'react';
 import './Map.css';
 
@@ -12,10 +12,6 @@ export default function Map({ shopDetail, latitude, longitude }) {
   const center = {
     lat: latitude,
     lng: longitude
-  };
-
-  const onInfoLoad = InfoWindow => {
-    console.log('infowindow is: ', InfoWindow);
   };
 
   const divStyle = {
@@ -62,7 +58,6 @@ export default function Map({ shopDetail, latitude, longitude }) {
         >
           <Marker position={center} />
           <InfoWindow
-            onLoad={onInfoLoad}
             position={center}
           >
             <div style={divStyle}>
