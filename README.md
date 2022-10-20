@@ -1,53 +1,61 @@
-# Alchemy React Base Template
+# Cowboy Coffee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Cowboy Coffee uses the React library, Yelp API, and Google Maps API to provide users with a list of coffee shops in their immediate area. Users can click/tap on a specific shop to be redirected to a detail page as well as favorite shops they enjoyed**
 
-Use this template for all your "from scratch" deliverables. To start, simply run
+## Built With
+<p align="left">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+    </a>
+    <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+        <img src="./public/logo192.png" alt="React logo" width="40" height="40"/>
+    </a> 
+    <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
+        <img src="./public/netlify-logo.png" alt="Netlify logo" width="40" height="40"/>
+    </a> 
+    <a href="https://supabase.com/" target="_blank" rel="noreferrer">
+        <img src="./public/supabase-logo.jpg" alt="Supabase logo" width="40" height="40"/>
+    </a> 
+</p>
 
-- `npm install`
-- `npm start`
+## SupaBase Data Schema
 
-## Available Scripts
+**Table Name: 'favorite_shops'**
 
-In the project directory, you can run:
+Key|Value
+--- | ---
+id|int8
+created_at|timestamptz
+user_id|uuid
+yelp_id|varchar
 
-### `npm start`
+## The Cowboys
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Dave Fisher: <br>
+<a href="https://github.com/davejfish">
+    <img src="./public/GitHub_Logo.png" width="50"/>
+</a> | 
+<a href="https://www.linkedin.com/in/davefisher88/">
+    <img src="./public/LI-Logo.png" width="65" height="17"/>
+</a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Shan Hathaway: <br>
+<a href="https://github.com/Hathaway-Shan">
+    <img src="./public/GitHub_Logo.png" width="50"/>
+</a> | 
+<a href="https://www.linkedin.com/in/shan-hathaway/">
+    <img src="./public/LI-Logo.png" width="65" height="17"/>
+</a>
 
-### `npm test`
+Olivia Pasion: <br>
+<a href="https://github.com/Olivia-Pasion">
+    <img src="./public/GitHub_Logo.png" width="50"/>
+</a> | 
+<a href="https://www.linkedin.com/in/olivia-pasion/">
+    <img src="./public/LI-Logo.png" width="65" height="17"/>
+</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## The Golden Rule: 
-
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
-
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
-
-## Making a plan in React
-1) Make a drawing of your app. Simple "wireframes" 
-1) Component Tree
-    1) Look at the drawing and break it down into Components. Label these Components explicitly (i.e., DogList, etc)
-    1) Draw a hierarchy (or tree) of components, describing which components are parents and which are children 
-    1) Looking at the drawing, make a list of your app's features. What should a user "be able to do" with this app?
-    1) Now look at your component tree: which components "go with" which features? Draw lines and make these connections explicitly.
-1) State
-    1) Look back at the drawing and your list of features and imagine using the app. What _state_ do you need to track? 
-    1) For each piece of state, ask: "When does it change?" If the answer is, "never", then it is not state.
-    1) Similarly, find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What state changes?" for each of these events. (This should feel like the the inverse of the previous step.)
-    1) Think about how to validate each of your state changes. How will I know if state changed in response to this event? (Hint: react dev tools or console.log usually helps here.)
-1) Data flow
-    1) Look at your hierarchy and ask: which components need access to which state? Another way to ask this is: for each component, what does this component need to "do its job?". This list becomes the "props" of the component.
-    1) If a child needs state from a parent, you will need to pass props. What will you name these props? 
-    1) Notice especially if two siblings need the same state: if so, you need a callback (i.e., debit card).
-1) Pick one feature from your list and build it out. Start with its parentmost component, and work down the component chain. Do not build another feature until this one is finished (and you can prove that it is finished by validating state change).
-
-## Additional considerations
-- Is any of your state redundant? For example, if you're tracking `wins`, `losses`, and `total`, you can probably get rid of `losses` state, and calculate it as `total - wins`.
-- Where should each piece of state live? How are you going to get data from where it lives to where it needs to be?
+# Our Plan
+<a href="https://miro.com/app/board/uXjVPNAL74I=/?share_link_id=255529463034">
+    <img src="./public/miro-logo.svg" width="85" height="70"/>
+</a>
