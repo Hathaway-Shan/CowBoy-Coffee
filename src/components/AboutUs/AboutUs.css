@@ -1,0 +1,28 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-container {
+  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  background-color: orange;
+  padding: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.dev{
+  display: flex;
+  flex-direction: column;
+  background-color: lightslategrey;
+  padding: 20px;
+}
+
+.dev-img {
+  height: 250px;
+  width: 250px;
+  border-radius: 9rem;
+  object-fit: cover;
+}
