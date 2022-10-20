@@ -1,5 +1,6 @@
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .shop-container {
@@ -47,4 +48,8 @@ ul {
 
 .map {
   padding: 10px;
+}
+
+.yelp-link {
+  margin: 15px 0;
 }

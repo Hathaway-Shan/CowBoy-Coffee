@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 import useShopDetail from '../../hooks/useShopDetail';
 import Loading from '../Loading/Loading';
 import Map from '../Map/Map';
@@ -8,6 +9,11 @@ import './ShopDetail.css';
 export default function ShopDetail() {
   const { id } = useParams();
   const { shopDetail, loading, error } = useShopDetail(id);
+  
+  const { user } = useUser();
+  if (!user) {
+    return <Redirect to="/auth/sign-up"></Redirect>;
+  }
 
   if (error) {
     return <h1>{error}</h1>;
@@ -19,9 +25,14 @@ export default function ShopDetail() {
 
   return (
     <div className='shop-container'>
-      {console.log('shop detail: ', shopDetail)}
-      <div className='map'>
-        <Map latitude={shopDetail.coordinates.latitude} longitude={shopDetail.coordinates.longitude}/>
+      <div className='image-container'>
+        <ul>
+          {shopDetail.photos.map((img, index) => (
+            <li key={index}>
+              <img src={img} />
+            </li>
+          ))}
+        </ul>
       </div>
       <div className='title-type'>
         <h2>{shopDetail.name}</h2>
@@ -33,7 +44,6 @@ export default function ShopDetail() {
           })}
         </h3>
       </div>
-
       <div className='shop-info'>
         <ul>
           {shopDetail.location.display_address.map((address, index) => {
@@ -41,32 +51,28 @@ export default function ShopDetail() {
               return <span key={address}>{address}</span>;
             return <span key={address}>{address} </span>;
           })}
-          <li>
+          {shopDetail.phone ? <li>
             <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>
-          </li>
-          <li>
+          </li> : <></>}
+          {shopDetail.hours[0].is_open_now ? <li>
             {shopDetail.hours[0].is_open_now ? <span>Open: Yes</span> : <span>Open: No</span>}
-          </li>
-          <li>
+          </li> : <></>}
+          {shopDetail.price ? <li>
             <span>price: {shopDetail.price}</span>
-          </li>
-          <li>
+          </li> : <></>}
+          {shopDetail.rating ? <li>
             <span>rating: {shopDetail.rating}</span>
-          </li>
+          </li> : <></>}
         </ul>
       </div>
-
-      <div className='image-container'>
-        <ul>
-          {shopDetail.photos.map((img, index) => (
-            <li key={index}>
-              <img src={img} />
-            </li>
-          ))}
-        </ul>
-        
+      <div className='map'>
+        <Map shopDetail={shopDetail} latitude={shopDetail.coordinates.latitude} longitude={shopDetail.coordinates.longitude}/>
       </div>
-
+      <div className='yelp-link'>
+        <span>
+          <a href={shopDetail.url}>yelp/{shopDetail.alias}</a>
+        </span>
+      </div>
     </div>
    
   );
