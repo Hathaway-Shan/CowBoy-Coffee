@@ -5,7 +5,7 @@ import './NavMenu.css';
 
 export function NavMenu() {
   const { setUser } = useUser();
-  const [navOpen, setNavOpen] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
 
   const handleToggle = () => {
     setNavOpen((prev) => !prev);
