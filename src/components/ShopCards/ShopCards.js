@@ -40,19 +40,18 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
     <div className="card-container">
       {shops.map((shop) => (
         <div className='shop-card' key={shop.id}>
-          <h2 onClick={() => handleRedirect(shop.id)}>{shop.name}</h2>
-          <div className='check-fav'>
+          <div className='shop-image'>
+            <img src={shop.image_url} />
+          </div>
+          <h2 className='shop-title' onClick={() => handleRedirect(shop.id)}>{shop.name}</h2>
+          <span className='shop-address'>{shop.location.display_address}</span>
+          <div className='check-fav shop-favorite'>
             <label>
               favorite
               <input type='checkbox' checked={handleFave(shop)} onChange={() => handleCheck(shop.id, user.id, shop)} />
             </label>
           </div>
-          
-          <span>{shop.location.display_address}</span>
           <span>{shop.phone}</span>
-          <div className='image-box'>
-            <img src={shop.image_url} />
-          </div>
         </div> 
       ))}
     </div>
