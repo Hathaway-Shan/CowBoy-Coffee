@@ -43,15 +43,19 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
           <div
             className="fave-card"
             key={fave.id}
-            style={{
-              backgroundImage: `url(${fave.image_url})`,
-            }}
           >
-            <h3>{fave.name}</h3>
-            {fave.categories.map((cat) => (
-              <span key={cat.title}>{cat.title}</span>
-            ))}
-            <button onClick={() => handleRemove(fave.id, user.id)}>remove</button>
+            <div className='image'>
+              <img src={fave.image_url} />
+            </div>
+            <h2 className='title'>{fave.name}</h2>
+            <button className='remove-button' onClick={() => handleRemove(fave.id, user.id)}>remove</button>
+            <ul className='desc'>
+              {fave.categories.map((cat) => (
+                <li key={cat.title}>
+                  <span>{cat.title}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))
       )}

@@ -1,7 +1,6 @@
 .faves-container {
-  height: 200px;
-  min-width: 300px;
-  width: 40vw;
+  height: 500px;
+  min-width: 350px;
   margin-bottom: 10px;
   overflow: scroll;
   -ms-overflow-style: none;
@@ -13,22 +12,41 @@
 }
 
 .fave-card {
+  display: grid;
   height: 200px;
-  padding: 10px;
-  margin: 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  text-align: right;
+  grid-template-areas: 
+  'image title'
+  'button desc';
+  align-items: center;
+  margin: 10px 0;
 }
 
-.fave-card button {
-  display: block;
-  position: relative;
-  top: 100px;
-  left: 0px;
+.image {
+  display: flex;
+  grid-area: 'image';
+  justify-content: center;
+}
+
+.image img {
+  border: solid 3x black;
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+}
+
+.title {
+  grid-area: 'title'
+}
+
+.desc {
+  grid-area: 'desc';
+  padding: 10px;
+}
+
+.remove-button {
+  grid-area: 'button';
 }
 
 .on-screen {
-  transform: translateX(10px);
+  transform: translateX(20px);
 }
