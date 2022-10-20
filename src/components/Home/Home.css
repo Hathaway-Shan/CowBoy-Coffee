@@ -1,3 +1,9 @@
 .home-container h1 {
   margin: 0;
 }
+
+.home-header button {
+  position: absolute;
+  top: 55px;
+  left: 5px;
+}

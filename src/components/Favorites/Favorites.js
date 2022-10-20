@@ -3,7 +3,7 @@ import { deleteFavoriteShop } from '../../services/favorites';
 import Loading from '../Loading/Loading';
 import './Favorites.css';
 
-export function Favorites({ favorites, setFavorites, shops, loadFave, error }) {
+export function Favorites({ favorites, setFavorites, shops, loadFave, error, isVisable }) {
   const { user } = useUser();
 
   const handleRemove = async (yelp_id, user_id) => {
@@ -33,9 +33,8 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error }) {
       </span>
     );
   if (error) return <h3>{error.message}</h3>;
-
   return (
-    <div className="faves-container">
+    <div className={`${isVisable ? 'faves-container on-screen' : 'faves-container'}`}>
       <h2>Favorite Saloons</h2>
       {userFaves.length === 0 ? (
         <span>add some favorites to see them here</span>
