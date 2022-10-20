@@ -1,0 +1,29 @@
+.faves-container {
+  height: 200px;
+  min-width: 350px;
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border: solid 3px black;
+}
+
+.fave-card {
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: solid 3px black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  text-align: right;
+}
+
+.fave-card button {
+  display: block;
+  position: relative;
+  top: 100px;
+  left: 0px;
+}
