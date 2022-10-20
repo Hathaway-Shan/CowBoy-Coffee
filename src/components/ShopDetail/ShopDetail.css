@@ -11,6 +11,7 @@ ul {
 
 .shop-info {
   margin: auto;
+  margin: 10px 0;
   text-align: center;
 }
 
@@ -18,7 +19,7 @@ ul {
   padding: 0px;
 }
 
-.image-container {
+.detail-image-container {
   width: 300px;
   margin: auto;
   overflow-x: scroll;
@@ -27,21 +28,20 @@ ul {
   scrollbar-width: none;
 }
 
-.image-container ul {
+.detail-image-container ul {
   list-style: none;
   display: block;
   white-space: nowrap;
 }
 
-.image-container li {
-  display: inline;
-  width: 100px;
+.detail-image-container li {
+  display: inline-block;
   height: 300px;
   justify-content: center;
   align-items: center;
 }
 
-.image-container img {
+.detail-image-container img {
   width: 300px;
   padding: 10px;
 }
