@@ -7,8 +7,12 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
   const { user } = useUser();
 
   if (!user) {
-    return <Redirect to="/auth/sign-up"></Redirect>;
+    return <Redirect to="/auth/sign-in"></Redirect>;
   }
+
+  const handleRedirect = (id) => {
+    window.location = `/campfire/${id}`;
+  };
 
   function handleFave(shop) {
     const found = favorites.find((favorite) => {
@@ -35,12 +39,20 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
   return (
     <div className="card-container">
       {shops.map((shop) => (
-        <div key={shop.id}>
-          <h2>{shop.name}</h2>
-          <input type='checkbox' checked={handleFave(shop)} onChange={() => handleCheck(shop.id, user.id, shop)} />
+        <div className='shop-card' key={shop.id}>
+          <h2 onClick={() => handleRedirect(shop.id)}>{shop.name}</h2>
+          <div className='check-fav'>
+            <label>
+              favorite
+              <input type='checkbox' checked={handleFave(shop)} onChange={() => handleCheck(shop.id, user.id, shop)} />
+            </label>
+          </div>
+          
           <span>{shop.location.display_address}</span>
           <span>{shop.phone}</span>
-          <img src={shop.image_url} />
+          <div className='image-box'>
+            <img src={shop.image_url} />
+          </div>
         </div> 
       ))}
     </div>
