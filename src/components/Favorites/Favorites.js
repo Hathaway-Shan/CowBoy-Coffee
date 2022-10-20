@@ -11,6 +11,10 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
     setFavorites((prev) => prev.filter((prevItem) => prevItem.id !== removedItem.id));
   };
 
+  const handleRedirect = (fave) => {
+    window.location = `/campfire/${fave.id}`;
+  };
+
   const getFavorites = () => {
     const results = favorites.map((fave) =>
       shops.find((shop) => {
@@ -32,7 +36,9 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
         <Loading />
       </span>
     );
+
   if (error) return <h3>{error.message}</h3>;
+
   return (
     <div className={`${isVisable ? 'faves-container on-screen' : 'faves-container'}`}>
       <h2>Favorite Saloons</h2>
@@ -47,7 +53,7 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
             <div className='image'>
               <img src={fave.image_url} />
             </div>
-            <h2 className='title'>{fave.name}</h2>
+            <h2 onClick={() => handleRedirect(fave)} className='title'>{fave.name}</h2>
             <button className='remove-button' onClick={() => handleRemove(fave.id, user.id)}>remove</button>
             <ul className='desc'>
               {fave.categories.map((cat) => (
