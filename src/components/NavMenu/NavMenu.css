@@ -30,10 +30,6 @@
 
 /* underline animation for nav */
 
-a.menu-links {
-  text-decoration: none;
-}
-
 .menu-links::after {
   content: '';
   height: 0.5px;
@@ -52,6 +48,19 @@ a.menu-links {
 }
 
 .menu-links:hover {
+  color: aqua;
+}
+
+/* menu-links-open css */
+
+.menu-links-open {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  transition: none;
+}
+
+.menu-links-open:hover {
   color: aqua;
 }
 
