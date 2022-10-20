@@ -30,7 +30,11 @@ export default function Header() {
       )}
       {user && (
         <div className="header-wrapper">
-          <div>Welcome {username}, to Cowboy Coffee</div>
+          <div>
+            <h2>
+              Welcome {username}, to Cowboy Coffee
+            </h2>
+          </div>
           <NavMenu />
         </div>
       )}
