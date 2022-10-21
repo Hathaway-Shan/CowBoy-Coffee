@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 
-
 export default function useBackground() {
   const [background, setBackground] = useState();
-
 
   useEffect(() => {
     const fetchBackground = () => {

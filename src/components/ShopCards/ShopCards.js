@@ -51,7 +51,7 @@ export default function ShopCards({ shops, favorites, setFavorites }) {
               <input type='checkbox' checked={handleFave(shop)} onChange={() => handleCheck(shop.id, user.id, shop)} />
             </label>
           </div>
-          <span>{shop.phone}</span>
+          <a href={`tel:${shop.phone}`}><span>{shop.phone}</span></a>
         </div> 
       ))}
     </div>

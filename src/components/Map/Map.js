@@ -20,8 +20,6 @@ export default function Map({ shopDetail, latitude, longitude }) {
     padding: 15,
   };
 
-  
-
   const Marker = (options) => {
     const [marker, setMarker] = useState();
 
