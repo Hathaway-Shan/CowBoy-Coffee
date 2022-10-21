@@ -1,23 +1,50 @@
 .about-us {
   display: flex;
   flex-direction: column;
+  background-image: url("../../../public/assets/imgs/coffee-pots.jpg");
+  background-position: center;
+  background-size: cover;
+  
+  
+}
+h1 {
+  padding: 30px;
+  font-size: 50px;
+  margin: 15px;
+  text-shadow: -5px 2px 8px white;
 }
 
 .dev-container {
   justify-content: center;
   display: flex;
   justify-content: space-around;
-  background-color: orange;
+  background-color: rgba(255, 255, 255, 0.504);
+  
   padding: 50px;
   margin-left: 25px;
   margin-right: 25px;
+  object-fit: cover;
 }
 
-.dev{
+.dev {
   display: flex;
   flex-direction: column;
-  background-color: lightslategrey;
   padding: 20px;
+  justify-content: center;
+}
+
+.hat-container {
+  position: absolute;
+  top: 9.75rem;
+  z-index: 40;
+}
+
+.hat {
+  height: 250px;
+  width: 250px;
+  object-fit: scale-down;
+  pointer-events: none;
+  
 }
 
 .dev-img {
@@ -25,4 +52,5 @@
   width: 250px;
   border-radius: 9rem;
   object-fit: cover;
+  z-index: 30;
 }
