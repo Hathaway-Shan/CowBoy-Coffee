@@ -37,7 +37,7 @@ export default function Home() {
           />
           favorites
         </button>
-        <h1>Your Campfire</h1>
+        <h1>Campfire</h1>
       </div>
       <Random />
       <Favorites

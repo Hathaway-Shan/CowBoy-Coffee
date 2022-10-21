@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Nixie+One&family=Rye&display=swap');
 
-/* 
-header ---> font-family: 'Rye', cursive; 
-h2 or h3 -> font-family: 'Fredericka the Great', cursive;
-h2 or h3 -> font-family: 'Love Ya Like A Sister', cursive;
-subtext --> font-family: 'Nixie One', cursive;
-*/
-
 .App {
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 
