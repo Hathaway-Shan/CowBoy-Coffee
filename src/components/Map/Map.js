@@ -52,14 +52,14 @@ export default function Map({ shopDetail, latitude, longitude }) {
           id='map'
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={18}
+          zoom={15}
         >
           <Marker position={center} />
           <InfoWindow
             position={center}
           >
             <div style={divStyle}>
-              <h1>{shopDetail.name}</h1>
+              <h2>{shopDetail.name}</h2>
               <ul>
                 {shopDetail.phone ? <li>
                   <span>phone: <a href={`tel:${shopDetail.phone}`}>{shopDetail.phone}</a></span>

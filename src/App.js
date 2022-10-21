@@ -1,17 +1,18 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-
 import Auth from './components/Auth/Auth';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile';
 import ShopDetail from './components/ShopDetail/ShopDetail';
 import AboutUs from './components/AboutUs/AboutUs';
+import useBackground from './hooks/useBackground';
 
 function App() {
+  const { background } = useBackground();
 
   return (
-    <div className="App">
+    <div style={{ backgroundImage: `url(${background})` }} className="App">
       <Header />
       <Switch>
         <Route path="/auth/:type" component={Auth} />
