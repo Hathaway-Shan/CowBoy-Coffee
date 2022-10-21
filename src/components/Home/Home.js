@@ -30,7 +30,10 @@ export default function Home() {
     <div className="home-container">
       {loading ? <Loading /> : <></>}
       <div className='home-header'>
-        <button onClick={handleSetVisable}>favorites</button>
+        <button onClick={handleSetVisable}>
+          <img src={`${process.env.PUBLIC_URL}/assets/favorite.png`} />
+          favorites
+        </button>
         <h1>Your Campfire</h1>
       </div>
       <Random />
