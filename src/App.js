@@ -9,6 +9,7 @@ import ShopDetail from './components/ShopDetail/ShopDetail';
 import AboutUs from './components/AboutUs/AboutUs';
 
 function App() {
+
   return (
     <div className="App">
       <Header />
