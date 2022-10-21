@@ -1,6 +1,6 @@
 .auth-form-container {
   min-width: 350px;
-  width: 600px;
+  max-width: 600px;
   height: 400px;
   margin: auto;
 }
