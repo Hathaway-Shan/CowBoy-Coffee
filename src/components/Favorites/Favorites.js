@@ -16,19 +16,18 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
   };
 
   const getFavorites = () => {
-    const results = favorites.map((fave) =>
-      shops.find((shop) => {
-        return shop.id === fave.yelp_id;
-      })
-    );
+    const results = [];
+    for (let i = 0; i < favorites.length; i++) {
+      for (let j = 0; j < shops.length; j++) {
+        if (favorites[i].yelp_id === shops[j].id) {
+          results.push(shops[j]);
+        }
+      }
+    }
     return results;
   };
-
   const results = getFavorites();
-  const userFaves = [];
-  for (let i = 0; i < results.length; i++) {
-    if (results[i] !== undefined) userFaves.push(results[i]);
-  }
+ 
 
   if (loadFave)
     return (
@@ -42,10 +41,10 @@ export function Favorites({ favorites, setFavorites, shops, loadFave, error, isV
   return (
     <div className={`${isVisable ? 'faves-container on-screen' : 'faves-container'}`}>
       <h2>Favorite Saloons</h2>
-      {userFaves.length === 0 ? (
+      {results.length === 0 ? (
         <span>add some favorites to see them here</span>
       ) : (
-        userFaves.map((fave) => (
+        results.map((fave) => (
           <div
             className="fave-card"
             key={fave.id}
