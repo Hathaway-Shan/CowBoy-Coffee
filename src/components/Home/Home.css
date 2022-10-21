@@ -3,7 +3,14 @@
 }
 
 .home-header button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 55px;
-  left: 5px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
+
