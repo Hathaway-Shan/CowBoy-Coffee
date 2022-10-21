@@ -4,15 +4,23 @@ ul {
 }
 
 .shop-container {
+  display: flex;
+  flex-direction: column;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  align-items: center;
+  justify-content: center;
 }
 
 .shop-info {
   margin: auto;
   margin: 10px 0;
   text-align: center;
+  background-color: antiquewhite;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .shop-info ul {
@@ -52,4 +60,5 @@ ul {
 
 .yelp-link {
   margin: 15px 0;
+  color: white;
 }

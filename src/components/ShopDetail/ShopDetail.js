@@ -34,7 +34,7 @@ export default function ShopDetail() {
           ))}
         </ul>
       </div>
-      <div className='title-type'>
+      <div className='shop-info'>
         <h2>{shopDetail.name}</h2>
         <h3>
           {shopDetail.categories.map((cat, index) => {
@@ -43,15 +43,15 @@ export default function ShopDetail() {
             return <span key={cat.title}>{cat.title}, </span>;
           })}
         </h3>
-      </div>
-      <div className='shop-info'>
-        <ul>
-          {shopDetail.location.display_address.map((address, index) => {
-            if (shopDetail.location.display_address.length === index + 1)
-              return <span key={address}>{address}</span>;
-            return <span key={address}>{address} </span>;
-          })}
-        </ul>
+        <div>
+          <ul>
+            {shopDetail.location.display_address.map((address, index) => {
+              if (shopDetail.location.display_address.length === index + 1)
+                return <span key={address}>{address}</span>;
+              return <span key={address}>{address} </span>;
+            })}
+          </ul>
+        </div>
       </div>
       <div className='map'>
         <Map shopDetail={shopDetail} latitude={shopDetail.coordinates.latitude} longitude={shopDetail.coordinates.longitude}/>

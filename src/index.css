@@ -15,6 +15,11 @@ body {
   margin: 0;
   font-family: 'Fredericka the Great', cursive;
   font-size: 16px;
+  background-image: url('../public/assets/imgs/mountains-red.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
