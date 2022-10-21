@@ -13,7 +13,7 @@ export default function useBackground() {
           setBackground(`${process.env.PUBLIC_URL}/assets/imgs/night-sky.jpg`);
         } 
         else if ((hour >= 6 && hour <= 12)) {
-          setBackground(`${process.env.PUBLIC_URL}/assets/imgs/side-saddle.jpg`);
+          setBackground(`${process.env.PUBLIC_URL}/assets/imgs/mountains-blue.jpg`);
         }
         else {
           setBackground(`${process.env.PUBLIC_URL}/assets/imgs/mountains-red.jpg`);
