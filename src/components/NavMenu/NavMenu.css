@@ -52,7 +52,7 @@
   color: black;
 }
 
-/* menu-links-open css */
+/* menu-links-open css and animation*/
 
 .menu-links-open {
   cursor: pointer;
@@ -64,6 +64,19 @@
 .menu-links-open:hover {
   color: rgb(191, 188, 188);
   font-style: italic;
+  animation: indent 0.75s;
+}
+
+@keyframes indent {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* link container for nav */
