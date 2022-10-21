@@ -14,3 +14,31 @@
   cursor: pointer;
 }
 
+/* favorite buttons animations */
+
+.favoritesButton:hover {
+  animation: grow 2s;
+}
+
+.favoritesButtonImg:hover {
+  animation: spin 1.5s;
+}
+
+@keyframes spin {
+  0%,
+  80% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}

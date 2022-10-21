@@ -23,15 +23,18 @@ export default function Home() {
   if (error) return <h3>{error.message}</h3>;
 
   const handleSetVisable = () => {
-    setIsVisable(prev => !prev);
+    setIsVisable((prev) => !prev);
   };
 
   return (
     <div className="home-container">
       {loading ? <Loading /> : <></>}
-      <div className='home-header'>
-        <button onClick={handleSetVisable}>
-          <img src={`${process.env.PUBLIC_URL}/assets/favorite.png`} />
+      <div className="home-header">
+        <button className="favoritesButton" onClick={handleSetVisable}>
+          <img
+            className="favoritesButtonImg"
+            src={`${process.env.PUBLIC_URL}/assets/favorite.png`}
+          />
           favorites
         </button>
         <h1>Your Campfire</h1>
