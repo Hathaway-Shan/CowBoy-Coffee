@@ -11,6 +11,10 @@
   border-radius: 5px;
 }
 
+.header-wrapper h2 {
+  text-shadow: -2px 2px 8px white;
+}
+
 .loginout {
   margin: 0 5px;
 }
