@@ -14,6 +14,29 @@
   cursor: pointer;
 }
 
+.fave-card h2 {
+  cursor: pointer;
+}
+
+/* shop card underline animation */
+
+.fave-card h2::after {
+  content: '';
+  height: 1.5px;
+  width: 0%;
+  background-color: black;
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+
+.fave-card h2:hover::after {
+  content: '';
+  height: 1.5px;
+  width: 100%;
+  background-color: black;
+  display: block;
+}
+
 /* favorite buttons animations */
 
 .favoritesButton:hover {
